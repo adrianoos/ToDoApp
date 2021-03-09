@@ -1,0 +1,254 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+.todoListMain {
+  height: auto;
+}
+
+#root {
+  position: absolute;
+  top: 20px;
+  margin: 0 auto; 
+  height: 500px;
+  width: 500px;
+  background-color: black;
+  position: relative;
+  border-radius: 10px;
+  border-color: rgb(3, 192, 192);
+  border-style: double;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#root::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(3, 3, 3);
+  border-radius: 10px;
+
+}
+#root::-webkit-scrollbar:hover {
+  width: 8px;
+  background-color: rgb(43, 43, 43);
+  border-radius: 10px;
+
+}
+
+#root::-webkit-scrollbar-thumb {
+  width: 15px;
+  background-color: rgb(3, 150, 150);
+  border-radius: 10px;
+  
+}
+
+#root::-webkit-scrollbar-thumb:hover {
+  width: 15px;
+  background-color: rgb(5, 199, 199);
+  border-radius: 10px;
+
+}
+
+
+.header {
+  position: absolute;
+  left: 120px;
+  top: 30px;
+}
+.header input {
+  position: absolute;
+  width: 200px;
+  left: -25px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(4, 211, 211);
+  border: 5px;
+  border-color: rgb(3, 150, 150);
+  border-style: double;
+  color: rgb(1, 75, 75);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header input:hover {
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(4, 211, 211);
+  border: 5px;
+  border-color: rgb(2, 100, 100);
+  border-style: double;
+  cursor: pointer;
+}
+
+#sbmbutton {
+  position: absolute;
+  left: 210px;
+  top: 0px;
+  height: 46px;
+  width: 60px;
+  color: rgb(2, 110, 110);
+  border-radius: 5px;
+  background-color: rgb(4, 211, 211);
+  font-weight: bold;
+  border: 5px;
+  border-color: rgb(3, 150, 150);
+  border-style: double;
+}
+#sbmbutton:hover {
+  position: absolute;
+  left: 210px;
+  top: 0px;
+  height: 46px;
+  width: 60px;
+  color: rgb(2, 2, 2);
+  border-radius: 5px;
+  background-color: rgb(55, 107, 107);
+  font-weight: bold;
+  border: 5px;
+  border-color: rgb(1, 143, 143);
+  border-style: double;
+  cursor: pointer;
+}
+
+
+.theList {
+  position: absolute;
+  color:rgb(2, 110, 110);
+  left: 75px;
+  top: 80px;
+  list-style: none;
+  width: 250px;
+  
+}
+
+.theList li {
+  height: auto;
+  width: auto;
+  word-wrap: break-word;
+  text-align: center;
+  text-transform: capitalize;
+  background-color:rgb(4, 218, 218);
+  margin: 10px;
+  color:rgb(1, 59, 59);
+  border-radius: 5px;
+  padding: 6px;
+  border: 5px;
+  border-color: rgb(2, 100, 100);
+  border-style: double;
+  cursor: pointer;
+  transition: background-color 2s ease-out;
+}
+
+.theList li:after {
+  content: attr(data-text);
+  display: none;
+  position: absolute;
+  align-self: center;
+  color:rgb(41, 48, 48);
+  background-color: rgb(23, 185, 185);
+  border-radius: 3px;
+  border: 2px;
+  border-color: rgb(2, 100, 100);
+  border-style: solid;
+  padding: 4px;
+  
+}
+.theList li:hover:after {
+  content: attr(data-text);
+  display: block;
+  margin-top: 2px;
+}
+
+  
+.theList li:hover {
+  
+  background-color:rgb(2, 121, 121);
+  margin: 10px;
+  color:rgb(1, 59, 59);
+  border-radius: 5px;
+  padding: 6px;
+  border: 5px;
+  border-color: rgb(2, 65, 65);
+  border-style: double;
+  cursor: pointer;
+
+}
+#info {
+  position: absolute;
+  background-color: black;
+  left: 170px;
+  top: 80px;
+  font-size: x-large;
+  color: rgb(97, 103, 107);
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 1.5s;
+  
+}
+
+#confDiv {
+  position: absolute;
+  background-color: black;
+  color: rgb(17, 153, 153);
+  height: 100px;
+  width: 200px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px;
+  border-color: rgb(23, 185, 185);
+  border-style: double;
+  border-radius: 5px;
+  padding: 5px;
+  visibility: hidden;
+}
+
+#yes {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px;
+  border-color: rgb(23, 185, 185);
+  border-style: solid;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+#no {
+  position: absolute;
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px;
+    border-color: rgb(23, 185, 185);
+    border-style: solid;
+    border-radius: 3px;
+    padding: 5px;
+  }
+
+  #yes:hover {
+    position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px;
+  border-color: rgb(23, 185, 185);
+  border-style: solid;
+  border-radius: 3px;
+  padding: 5px;
+  background-color:rgb(5, 122, 122) ;
+  }
+
+  #no:hover {
+    position: absolute;
+      left: 60%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px;
+      border-color: rgb(23, 185, 185);
+      border-style: solid;
+      border-radius: 3px;
+      padding: 5px;
+      background-color:rgb(5, 122, 122) ;
+    }

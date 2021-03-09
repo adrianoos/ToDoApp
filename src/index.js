@@ -44,7 +44,7 @@ this.yesOrNo = this.yesOrNo.bind(this);
         text: this._inputElement.value,
         key: Date.now()
       }
-      
+      if (newItem.text.length !== 0) {
       this.setState((prevState) => {
         return { 
           items: prevState.items.concat(newItem) 
@@ -52,7 +52,12 @@ this.yesOrNo = this.yesOrNo.bind(this);
       },() => {this.itemChecker()}); // callback for chech actual state
       this._inputElement.value = "";
       e.preventDefault();
-    };
+    } else {
+      this._inputElement.value = "Please Add Item"
+      setTimeout(() => (this._inputElement.value = " "), 1500);
+      e.preventDefault();
+    }
+  };
 
     deleteItem() { // deleting items function
       let key = this.state.currentKey.value
